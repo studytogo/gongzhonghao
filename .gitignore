@@ -4,7 +4,6 @@ lastupdate.tmp
 swagger/swagger.json
 swagger/swagger.yml
 *.exe~
-*.exe
 .vscode/
 new_erp_agent_by_go
 logs/*
