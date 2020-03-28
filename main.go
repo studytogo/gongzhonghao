@@ -40,6 +40,7 @@ func validateUrl(w http.ResponseWriter, r *http.Request) bool {
 }
 
 func procSignature(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("111111111111111111111111111")
 	r.ParseForm() //Request需要解析
 	if !validateUrl(w, r) {
 		log.Println("Wechat Service: This http request is not from wechat platform")
@@ -51,7 +52,7 @@ func procSignature(w http.ResponseWriter, r *http.Request) {
 func main() {
 	log.Println("Wechat Service: Start!")
 	http.HandleFunc("/gongzhonghao", procSignature)
-	err := http.ListenAndServe(":9999", nil)
+	err := http.ListenAndServe(":80", nil)
 	if err != nil {
 		log.Println("Wechat Service: ListenAndServe Error: ", err)
 	}
